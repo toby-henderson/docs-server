@@ -195,6 +195,11 @@ Note also that the root certificate is never included in the chain.
 
 . Manually copy the node private key (`pkey.key`) and the chain file (`chain.pem`) to the `inbox` folder of the Couchbase Server-node:
 +
+[{tabs}]
+====
+Ubuntu::
++
+--
 [source,bash]
 ----
 mkdir /opt/couchbase/var/lib/couchbase/inbox/
@@ -203,6 +208,21 @@ chmod a+x /opt/couchbase/var/lib/couchbase/inbox/${CHAIN}.pem
 cp ./${NODE_DIR}/${NODE}.key /opt/couchbase/var/lib/couchbase/inbox/${NODE}.key
 chmod a+x /opt/couchbase/var/lib/couchbase/inbox/${NODE}.key
 ----
+--
+
+macOS::
++
+--
+[source,bash]
+----
+mkdir /Users/[name]/Library/Application\ Support/Couchbase/var/lib/couchbase/inbox/
+cp ./${CHAIN}.pem /Users/[name]/Library/Application\ Support/Couchbase/var/lib/couchbase/inbox/${CHAIN}.pem
+chmod a+x /Users/[name]/Library/Application\ Support/Couchbase/var/lib/couchbase/inbox/${CHAIN}.pem
+cp ./${NODE_DIR}/${NODE}.key /Users/[name]/Library/Application\ Support/Couchbase/var/lib/couchbase/inbox/${NODE}.key
+chmod a+x /Users/[name]/Library/Application\ Support/Couchbase/var/lib/couchbase/inbox/${NODE}.key
+----
+--
+====
 
 . Upload the root certificate, and activate it:
 +
