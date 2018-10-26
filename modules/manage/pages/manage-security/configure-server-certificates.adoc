@@ -307,7 +307,7 @@ This script installs the certificate to the desired location for each node in th
 +
 [source,bash]
 ----
-./install_certificate.sh USERNAME CLUSTER_IP SSH_USER
+./install_certificate.sh CLUSTER_IP SSH_USER
 ----
 * *USERNAME:* the RBAC user name to use for X.509 authentication.
 This user must already exist.
@@ -324,8 +324,6 @@ The following steps describe how to load the certificate for each node in the cl
 +
 [source,bash]
 ----
-./load_certificate.sh USERNAME CLUSTER_IP SSH_USER
+./load_certificate.sh CLUSTER_IP
 ----
-* *USERNAME:* the RBAC user name to use for X.509 authentication.
-This user must already exist.
 * *CLUSTER_IP:* the IP address of the Couchbase Server cluster.

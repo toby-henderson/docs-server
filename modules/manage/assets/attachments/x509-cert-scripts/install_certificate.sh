@@ -12,6 +12,7 @@ INBOX=/opt/couchbase/var/lib/couchbase/inbox/
 NODE=pkey
 ROOT_CA=ca
 SSH="ssh -o StrictHostKeyChecking=no"
+SSH_USER=${2:-vagrant}
 SCP="scp -o StrictHostKeyChecking=no"
 
 # loop through nodes
@@ -24,11 +25,11 @@ do
 	ip=`echo $host|sed 's/\"\([^:]*\):.*/\1/'`
 	# Copy private key and chain file to a node:/opt/couchbase/var/lib/couchbase/inbox
 	echo "Setup Certificate for ${ip}"
-	${SSH} vagrant@${ip} "sudo mkdir ${INBOX}" 2>/dev/null || true
-	${SCP} chain.pem vagrant@${ip}:chain.pem
-	${SCP} pkey.key vagrant@${ip}:pkey.key
-	${SSH} vagrant@${ip} "sudo mv chain.pem ${INBOX}${CHAIN}.pem"
-	${SSH} vagrant@${ip} "sudo mv pkey.key ${INBOX}${NODE}.key"
-	${SSH} vagrant@${ip} "sudo chmod a+x ${INBOX}${CHAIN}.pem"
-	${SSH} vagrant@${ip} "sudo chmod a+x ${INBOX}${NODE}.key"
+	${SSH} ${SSH_USER}@${ip} "sudo mkdir ${INBOX}" 2>/dev/null || true
+	${SCP} chain.pem ${SSH_USER}@${ip}:chain.pem
+	${SCP} pkey.key ${SSH_USER}@${ip}:pkey.key
+	${SSH} ${SSH_USER}@${ip} "sudo mv chain.pem ${INBOX}${CHAIN}.pem"
+	${SSH} ${SSH_USER}@${ip} "sudo mv pkey.key ${INBOX}${NODE}.key"
+	${SSH} ${SSH_USER}@${ip} "sudo chmod a+x ${INBOX}${CHAIN}.pem"
+	${SSH} ${SSH_USER}@${ip} "sudo chmod a+x ${INBOX}${NODE}.key"
 done
