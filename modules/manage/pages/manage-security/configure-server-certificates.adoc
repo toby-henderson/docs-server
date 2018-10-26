@@ -260,7 +260,7 @@ For further information on certificate-deployment, see xref:cli:cbcli/couchbase-
 The following steps describe how to create X.509 certificates for Couchbase Server.
 
 . Create a new directory called *SSLCA*.
-. Download link:{attachmentsdir}/x509-cert-scripts/gen_certificates.sh[gen_certificates.sh], link:{attachmentsdir}/x509-cert-scripts/openssl-san.cnf[openssl-san.cnf] and link:{attachmentsdir}/x509-cert-scripts/v3_ca.ext[v3_ca.ext] to the *SSLCA* directory.
+. Download link:{attachmentsdir}/x509-cert-scripts/gen_certificate.sh[gen_certificate.sh], link:{attachmentsdir}/x509-cert-scripts/openssl-san.cnf[openssl-san.cnf] and link:{attachmentsdir}/x509-cert-scripts/v3_ca.ext[v3_ca.ext] to the *SSLCA* directory.
 . Open *openssl-san.cnf* and replace the Couchbase Server node IPs with the ones corresponding to your cluster.
 +
 [source,bash]
