@@ -19,7 +19,7 @@ and identify the cluster to networked clients.
 * _Configuring client certificates_: These can be used by networked clients to
 authenticate with Couchbase Server.
 
-Additionally, procecedures are providing for the rotating of server
-certificates, to ensure optimal secure; the enablement of client-certificate
+Additionally, procedures are providing for the rotating of server
+certificates, to ensure optimal security; the enablement of client-certificate
 handling on the current cluster; and the handling of errors related to
 certificate management.
