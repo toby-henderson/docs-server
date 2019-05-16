@@ -85,7 +85,7 @@ The template automatically sets up a user name and password for the Couchbase We
 The template also configures a Security Group that closes off unused ports.
 This configuration can be further secured by specifying CIDR blocks to whitelist for XDCR and client connectivity.
 We also recommend restricting access to intra-cluster communication ports to the security group.
-Detailed information on Server ports is available here.
+Detailed information on Server ports is available here. #<<-- missing link
 
 AWS can enables encryption for disks that use EBS.
 This is not currently set in the template.
